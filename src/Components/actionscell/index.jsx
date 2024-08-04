@@ -114,7 +114,7 @@ function ColorlibStepIcon(props) {
 
     const icons = {
         1: <Archive />,
-        2: <Downloading />,
+        2: <Downloading sx={{transform: 'rotate(180deg)'}} />,
         3: <Unarchive />,
     };
 

@@ -250,7 +250,7 @@ const ActionsCell = ({ row }) => {
                     <strong>Total:</strong>
                 </Grid>
                 <Grid xs={8}>
-                    {row.totalAmount}
+                    $ {row.totalAmount}
                 </Grid>
             </Grid>
             <br/>

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boomi-warehouse-front
+  labels:
+    app: boomi-warehouse-front
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: boomi-warehouse-front
+  template:
+    metadata:
+      labels:
+        app: boomi-warehouse-front
+    spec:
+      containers:
+      - name: boomi-warehouse-front
+        image: registry.tasklab.dev/boomi-warehouse-front:latest
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: tskregcred

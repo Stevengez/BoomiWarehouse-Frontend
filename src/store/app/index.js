@@ -14,6 +14,8 @@ const appReducer = createSlice({
             if(!state.orders[order.id]){
                 state.orders[order.id] = {
                     ...order,
+		    id: typeof order.id === "string" ? parseInt(order.id):order.id,
+		    createdAt: order.createdAt !== "" ? order.createdAt : (new Date()).toISOString(),
                     dispatchedAt: order.receivedByWarehouseAt, 
                     acknowledgedAt: order.sentByWarehouseAt,
                     sentByWarehouseAt: undefined,
